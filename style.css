@@ -85,6 +85,92 @@ body {
     background-color: #444;
   }
 
+
+  /* Базовые стили бургер-кнопки */
+.burger {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1001;
+  margin-left: auto; 
+  margin-right: 25px;
+  display: none; /* скрыта на десктопе */
+}
+
+.burger span,
+.burger span::before,
+.burger span::after {
+  display: block;
+  background: #fff;
+  height: 2px;
+  border-radius: 2px;
+  width: 24px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.burger span::before,
+.burger span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.burger span::before { top: -6px; }
+.burger span::after { top: 6px; }
+
+/* Анимация в крестик */
+.burger.active span {
+  background: transparent;
+}
+.burger.active span::before {
+  transform: rotate(-45deg) translate(0, 0);
+  top: 0;
+}
+.burger.active span::after {
+  transform: rotate(45deg) translate(0, 0);
+  top: 0;
+}
+
+/* Мобильное меню скрыто по умолчанию */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(34, 34, 34);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: 0.5s ease;
+  z-index: 1000;
+}
+
+.mobile-menu.active {
+  transform: translateY(0);
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+.mobile-menu ul li {
+  margin: 20px 0;
+}
+.mobile-menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+
   .hero {
     overflow: hidden;
     
@@ -136,8 +222,8 @@ body {
 
   .hero_main_text {
     font-weight: 400;
-    font-size: 24px;
-    line-height: 110%;
+    font-size: 20px;
+    line-height: 170%;
   }
 
 .button_hero {
@@ -149,13 +235,15 @@ body {
 }
 
   .logo {
-    font-family: 'Prata', serif;
+    /* font-family: 'Prata', serif;
     font-weight: 400;
     font-size: clamp(24px, calc(24px + (36 - 24) * ((100vw - 768px) / (1920 - 768))), 36px); 
     line-height: 150%;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    text-align: center;
+    text-align: center; */
+    width: 74px;
+    height: 74px;
     color: #fff;
 }
   
@@ -175,6 +263,44 @@ body {
     line-height: 150%;
     letter-spacing: 0.04em;
     text-transform: uppercase;
+}
+
+.prices_list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.prices_list li {
+  position: relative;
+  padding-left: 40px; 
+  padding-bottom: 10px;
+  font-weight: 400;
+  font-size: clamp(18px, calc(18px + (24 - 18) * ((100vw - 320px) / (1050 - 320))), 24px);
+}
+
+.prices_list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-image: url('icon_bullet.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.price {
+  font-family: 'Prata', serif;
+  font-weight: 400;
+  font-size: clamp(24px, calc(24px + (40 - 24) * ((100vw - 320px) / (1050 - 320))), 40px);
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .section1 {
@@ -306,12 +432,12 @@ body {
     border: 2px solid #d5c9be;
     border-radius: 4px;
     padding: 25px 40px;
-  width: 100%;
-  box-sizing: border-box;
-font-weight: 400;
-font-size: 24px;
-line-height: 150%;
-color: #55565a;
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: #55565a;
 }
 
 .checkbox_label {
@@ -368,6 +494,7 @@ color: #fff;
   .footer {
     padding: 40px 0;
     color: #fff;
+    margin-top: -100px;
   }
 
   .footer_top {
@@ -505,6 +632,14 @@ color: #fff;
   }
   
   @media (max-width: 768px) {
+    .burger {
+      display: block;
+    }
+  
+    .header_menu {
+      display: none;
+    }
+    
     .section2_wrapper {
       grid-template-areas: 
         "img1"
@@ -525,6 +660,11 @@ color: #fff;
 
   .hero_wrapper {
     grid-template-columns: 1fr;
+  }
+
+  .header_wrapper {
+    justify-content: space-between;
+    gap: 0;
   }
 
   .section3_content {
@@ -586,4 +726,5 @@ color: #fff;
         font-size: 14px;
     }
 }
+
 
