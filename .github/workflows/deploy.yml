@@ -20,6 +20,13 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
+      - name: Dummy artifact upload step (workaround)
+        uses: actions/upload-artifact@v3
+        with:
+          name: dummy
+          path: ./does-not-exist
+          if-no-files-found: ignore
+
       - name: Upload static site to GitHub Pages
         uses: actions/upload-pages-artifact@v2
         with:
