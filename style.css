@@ -21,7 +21,6 @@ body {
     max-width: 1900px;           
     margin: 0 auto;              
     padding: 0 20px; 
-
   }
 
   .header {
@@ -85,8 +84,6 @@ body {
     background-color: #444;
   }
 
-
-  /* Базовые стили бургер-кнопки */
 .burger {
   position: relative;
   width: 24px;
@@ -97,7 +94,7 @@ body {
   z-index: 1001;
   margin-left: auto; 
   margin-right: 25px;
-  display: none; /* скрыта на десктопе */
+  display: none; 
 }
 
 .burger span,
@@ -122,7 +119,6 @@ body {
 .burger span::before { top: -6px; }
 .burger span::after { top: 6px; }
 
-/* Анимация в крестик */
 .burger.active span {
   background: transparent;
 }
@@ -135,7 +131,6 @@ body {
   top: 0;
 }
 
-/* Мобильное меню скрыто по умолчанию */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -228,20 +223,13 @@ body {
 
 .button_hero {
     font-weight: 700;
-    font-size: clamp(16px, calc(16px + (24 - 16) * ((100vw - 768px) / (1920 - 768))), 24px); /* Размер шрифта от 24px до 16px */
+    font-size: clamp(16px, calc(16px + (24 - 16) * ((100vw - 768px) / (1920 - 768))), 24px);
     letter-spacing: 0.04em;
-    width: clamp(130px, calc(140px + (191 - 130) * ((100vw - 768px) / (1920 - 768))), 191px);  /* Ширина от 191px до 140px */
-    height: clamp(65px, calc(60px + (96 - 65) * ((100vw - 768px) / (1920 - 768))), 96px);       /* Высота от 96px до 60px */
+    width: clamp(130px, calc(140px + (191 - 130) * ((100vw - 768px) / (1920 - 768))), 191px); 
+    height: clamp(65px, calc(60px + (96 - 65) * ((100vw - 768px) / (1920 - 768))), 96px);      
 }
 
   .logo {
-    /* font-family: 'Prata', serif;
-    font-weight: 400;
-    font-size: clamp(24px, calc(24px + (36 - 24) * ((100vw - 768px) / (1920 - 768))), 36px); 
-    line-height: 150%;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    text-align: center; */
     width: 74px;
     height: 74px;
     color: #fff;
@@ -336,7 +324,7 @@ body {
 
 .section2_img img {
     width: 100%;
-    max-width: 100%; /* Картинки будут заполнять свою колонку, но не выходить за пределы */
+    max-width: 100%; 
     height: auto;
     object-fit: contain;
   }
@@ -357,12 +345,12 @@ body {
 
   .section2_info li {
     position: relative;
-    padding-left: 30px; /* место для иконки */
-    margin-bottom: 20px; /* отступ между пунктами */
-    border-bottom: 1px solid #55565a; /* тонкая линия-разделитель */
-    padding-bottom: 20px; /* отступ снизу перед линией */
+    padding-left: 30px; 
+    margin-bottom: 20px;
+    border-bottom: 1px solid #55565a; 
+    padding-bottom: 20px;
     font-weight: 400;
-    font-size: clamp(16px, calc(16px + (24 - 16) * ((100vw - 768px) / (1920 - 768))), 24px); /* Размер шрифта от 24px до 16px */
+    font-size: clamp(16px, calc(16px + (24 - 16) * ((100vw - 768px) / (1920 - 768))), 24px); 
     line-height: 140%;
     color: #fff;
   }
@@ -380,7 +368,7 @@ body {
 
   .button_section2 {
     font-weight: 700;
-    font-size: clamp(16px, calc(16px + (24 - 16) * ((100vw - 768px) / (1920 - 768))), 24px); /* Размер шрифта от 24px до 16px */
+    font-size: clamp(16px, calc(16px + (24 - 16) * ((100vw - 768px) / (1920 - 768))), 24px); 
     letter-spacing: 0.04em;
     width: 100%;
     height: 78px;
@@ -396,9 +384,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: 40px; */
     gap: 20px;
-    overflow: hidden; /* Обрезаем лишнее */
+    overflow: hidden; 
     position: relative;
   }
 
@@ -408,7 +395,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    z-index: 1; /* Контент поверх картинки */
+    z-index: 1; 
     padding: 65px;
   }
 
@@ -467,7 +454,7 @@ body {
     object-fit: cover;
     object-position: right;
     z-index: 0;
-    pointer-events: none; /* Картинка становится чисто декоративной */
+    pointer-events: none; 
   }
 
   .footer_menu_wrapper {
@@ -526,9 +513,9 @@ color: #fff;
   .footer_order button {
     font-weight: 400;
     font-style: italic;
-    font-size: clamp(16px, calc(16px + (24 - 16) * ((100vw - 768px) / (1920 - 768))), 24px); /* Размер шрифта от 24px до 16px */
+    font-size: clamp(16px, calc(16px + (24 - 16) * ((100vw - 768px) / (1920 - 768))), 24px); 
     letter-spacing: 0.04em;
-    width: clamp(130px, calc(140px + (180 - 110) * ((100vw - 768px) / (1920 - 768))), 180px);  /* Ширина от 191px до 140px */
+    width: clamp(130px, calc(140px + (180 - 110) * ((100vw - 768px) / (1920 - 768))), 180px); 
     height: clamp(65px, calc(60px + (78 - 60) * ((100vw - 768px) / (1920 - 768))), 78px); 
   }
 
@@ -567,7 +554,7 @@ color: #fff;
 
   @media (max-width: 1500px) {
     .section3_wrapper img {
-      object-position: 90px center; /* Сдвиг картинки чуть левее */
+      object-position: 90px center; 
     }
   }
 
@@ -582,17 +569,17 @@ color: #fff;
 
   @media (max-width: 1200px) {
     .section3_wrapper img {
-      object-position: 150px center; /* Ещё сильнее сдвигаем левее */
+      object-position: 150px center; 
     }
   }
   
 @media (max-width: 1024px) {
     .section3_wrapper {
-      justify-content: stretch; /* Центрируем контент */
+      justify-content: stretch; 
     }
   
     .section3_wrapper img {
-      display: none; /* Прячем картинку */
+      display: none; 
     }
   
     .section3_content {
@@ -630,28 +617,6 @@ color: #fff;
         width: 50%;
     }
   }
-  
-  @media (max-width: 768px) {
-    .burger {
-      display: block;
-    }
-  
-    .header_menu {
-      display: none;
-    }
-    
-    .section2_wrapper {
-      grid-template-areas: 
-        "img1"
-        "info"
-        "img2";
-      grid-template-columns: 1fr;
-    }
-
-    .section2_info {
-        padding: 0 15px;
-    }
-  }
 
   @media (max-width: 768px) {
     .container {
@@ -665,6 +630,27 @@ color: #fff;
   .header_wrapper {
     justify-content: space-between;
     gap: 0;
+    height: 80px;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .header_menu {
+    display: none;
+  }
+  
+  .section2_wrapper {
+    grid-template-areas: 
+      "img1"
+      "info"
+      "img2";
+    grid-template-columns: 1fr;
+  }
+
+  .section2_info {
+      padding: 0 15px;
   }
 
   .section3_content {
@@ -696,7 +682,7 @@ color: #fff;
     }
   
     .footer_order button {
-      width: 100%; /* Пусть кнопка растягивается на всю ширину на мобилках */
+      width: 100%; 
       max-width: 200px;
     }
   
